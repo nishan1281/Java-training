@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello world</title>
+</head>
+<body>
+
+<h1>Hello world of java</h1>
+<p>This is a paragraph.</p>
+
+The time on the server is <%= new java.util.Date() %>
+<br/>
+
+<% 
+  for (int i = 1; i<=5; i++)
+    {
+	out.println("I love to code" + i);
+    }
+%>
+
+
+</body>
+</html>

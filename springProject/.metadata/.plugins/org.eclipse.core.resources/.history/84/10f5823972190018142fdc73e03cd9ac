@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<%@page import="java.util.Date"%>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Hello world of java</h1>
+<p>This is a paragraph.</p>
+
+The time on the server is <%= new java.util.Date() %>
+
+
+</body>
+</html>
