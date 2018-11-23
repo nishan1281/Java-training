@@ -8,18 +8,18 @@ public class Main {
         ArrayList<Integer> intArray = new ArrayList<Integer>();
 
         int j = 5;
-        for (int i=0; i<15; i++)
+        for (int i = 0; i < 15; i++)
 
         {
 
             intArray.add(Integer.valueOf(j));
-            j+=5;
+            j += 5;
         }
 
-        for (int i=0; i<intArray.size(); i++)
+        for (int i = 0; i < intArray.size(); i++)
 
         {
-            System.out.println(i +"-->" +intArray.get(i).intValue());
+            System.out.println(i + "-->" + intArray.get(i).intValue());
         }
 
         {

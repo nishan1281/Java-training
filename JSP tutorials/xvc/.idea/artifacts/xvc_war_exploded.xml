@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="xvc:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/xvc_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="xvc" />
+        </element>
+      </element>
+      <element id="library" level="project" name="src" />
+      <element id="library" level="application" name="src" />
+      <element id="javaee-facet-resources" facet="xvc/web/Web" />
+    </root>
+  </artifact>
+</component>
