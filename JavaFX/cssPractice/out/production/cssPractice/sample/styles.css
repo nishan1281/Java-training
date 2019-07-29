@@ -1,0 +1,8 @@
+.button{
+    -fx-background-color: gray;
+    -fx-text-fill: #ff1d13;
+}
+
+#idButtonFive {
+    -fx-text-fill: black;
+}

@@ -1,0 +1,32 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="toDoList">
+    <output-path>$PROJECT_DIR$/out/artifacts/toDoList</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.nishan.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="toDoList.jar">
+        <element id="module-output" name="toDoList" />
+      </element>
+      <element id="library" level="application" name="client-combined-3.14.0" />
+      <element id="library" level="application" name="commons-codec-1.10" />
+      <element id="library" level="application" name="commons-exec-1.3" />
+      <element id="library" level="application" name="commons-logging-1.2" />
+      <element id="library" level="application" name="guava-25.0-jre" />
+      <element id="library" level="application" name="httpclient-4.5.5" />
+      <element id="library" level="application" name="httpcore-4.4.9" />
+      <element id="library" level="application" name="javafx-12" />
+      <element id="library" level="application" name="okhttp-3.10.0" />
+      <element id="library" level="application" name="okio-1.14.1" />
+      <element id="library" level="application" name="src" />
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+    </root>
+  </artifact>
+</component>

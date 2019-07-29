@@ -1,0 +1,21 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10"
+          gridLinesVisible="true">
+    <padding >
+        <Insets top="10"/>
+    </padding>
+
+    <Button text="Start" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="90"/>
+    <Button text="End" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="90"/>
+    <Button text="Next" GridPane.rowIndex="0" GridPane.columnIndex="2" prefWidth="90"/>
+    <Button text="Previous" GridPane.rowIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" prefWidth="90"/>
+    <Button text="Play" GridPane.rowIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" prefWidth="90"/>
+    WebView browser = new WebView();
+    WebEngine webEngine = browser.getEngine();
+    webEngine.load("http://mySite.com");
+</GridPane>

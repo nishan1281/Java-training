@@ -1,0 +1,17 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<HBox fx:controller="sample.Controller"
+      xmlns:fx="http://javafx.com/fxml"  spacing="10">
+    <padding>
+        <Insets top="10"/>
+    </padding>
+
+    <Button text="Next" prefWidth="90"/>
+    <Button text="Previous" prefWidth="90"/>
+
+
+</HBox>

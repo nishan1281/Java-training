@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="mainBorderPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.nishan.Controller" >
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="New" onAction="#showNewItemDialog"></MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit"></MenuItem>
+                </items>
+
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <left>
+        <ListView fx:id="todoListView"  >
+        </ListView>
+
+    </left>
+    <center>
+        <VBox>
+            <TextArea fx:id="textAreaShow" VBox.vgrow="ALWAYS"></TextArea>
+            <HBox>
+                <Label text="Due :">
+                    <font>
+                        <Font name="Times New Roman bold" size="20"/>
+                    </font>
+                </Label>
+                <Label textFill="crimson" fx:id="labelDueDate">
+                    <font>
+                        <Font name="Times New Roman bold" size="20"/>
+                    </font>
+                 </Label>
+            </HBox>
+        </VBox>
+
+    </center>
+
+</BorderPane>

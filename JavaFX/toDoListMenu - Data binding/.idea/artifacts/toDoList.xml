@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="toDoList">
+    <output-path>$PROJECT_DIR$/out/artifacts/toDoList</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.nishan.main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="toDoList.jar">
+        <element id="module-output" name="toDoList" />
+      </element>
+      <element id="library" level="application" name="javafx-12" />
+    </root>
+  </artifact>
+</component>

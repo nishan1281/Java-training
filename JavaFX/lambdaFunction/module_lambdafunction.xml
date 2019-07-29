@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_lambdafunction" default="compile.module.lambdafunction">
+  <dirname property="module.lambdafunction.basedir" file="${ant.file.module_lambdafunction}"/>
+  
+  <property name="module.jdk.home.lambdafunction" value="${jdk.home.9}"/>
+  <property name="module.jdk.bin.lambdafunction" value="${jdk.bin.9}"/>
+  <property name="module.jdk.classpath.lambdafunction" value="jdk.classpath.9"/>
+  
+  <property name="compiler.args.lambdafunction" value="-encoding UTF-8 -source 9 -target 1.7 ${compiler.args}"/>
+  
+  <property name="lambdafunction.output.dir" value="${module.lambdafunction.basedir}/target/classes"/>
+  <property name="lambdafunction.testoutput.dir" value="${module.lambdafunction.basedir}/target/test-classes"/>
+  
+  <path id="lambdafunction.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="lambdafunction.module.production.classpath">
+    <path refid="${module.jdk.classpath.lambdafunction}"/>
+    <path refid="library.maven:_com.amazonaws:aws-lambda-java-core:1.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.plugins:maven-assembly-plugin:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-plugin-api:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-plexus:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-bean:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-guice:noaop:2.1.7.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-core:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-repository-metadata:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-impl:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-spi:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-api:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-util:1.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-classworlds:2.2.3.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-component-annotations:1.5.5.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-sec-dispatcher:1.3.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-cipher:1.4.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-artifact:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-common-artifact-filters:3.0.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-artifact-transfer:0.9.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.5.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-interpolation:1.25.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-archiver:4.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.18.classpath"/>
+    <path refid="library.maven:_org.iq80.snappy:snappy:0.4.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:file-management:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-io:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-compat:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.wagon:wagon-provider-api:2.10.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-filtering:3.1.1.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-build-api:0.0.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-io:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-archiver:3.2.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+  </path>
+  
+  <path id="lambdafunction.runtime.production.module.classpath">
+    <pathelement location="${lambdafunction.output.dir}"/>
+    <path refid="library.maven:_com.amazonaws:aws-lambda-java-core:1.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.plugins:maven-assembly-plugin:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-plugin-api:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-plexus:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-bean:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-guice:noaop:2.1.7.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-core:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-repository-metadata:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-aether-provider:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-impl:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-spi:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-api:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-util:1.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-classworlds:2.2.3.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-component-annotations:1.5.5.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-sec-dispatcher:1.3.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-cipher:1.4.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-artifact:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-common-artifact-filters:3.0.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-artifact-transfer:0.9.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.5.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-interpolation:1.25.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-archiver:4.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.18.classpath"/>
+    <path refid="library.maven:_org.iq80.snappy:snappy:0.4.classpath"/>
+    <path refid="library.maven:_org.tukaani:xz:1.8.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:file-management:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-io:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-compat:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.wagon:wagon-provider-api:2.10.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-filtering:3.1.1.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-build-api:0.0.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-io:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-archiver:3.2.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+  </path>
+  
+  <path id="lambdafunction.module.classpath">
+    <path refid="${module.jdk.classpath.lambdafunction}"/>
+    <pathelement location="${lambdafunction.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-lambda-java-core:1.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.plugins:maven-assembly-plugin:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-plugin-api:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-plexus:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-bean:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-guice:noaop:2.1.7.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-core:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-repository-metadata:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-aether-provider:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-impl:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-spi:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-api:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-util:1.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-classworlds:2.2.3.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-component-annotations:1.5.5.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-sec-dispatcher:1.3.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-cipher:1.4.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-artifact:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-common-artifact-filters:3.0.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-artifact-transfer:0.9.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.5.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-interpolation:1.25.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-archiver:4.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.18.classpath"/>
+    <path refid="library.maven:_org.iq80.snappy:snappy:0.4.classpath"/>
+    <path refid="library.maven:_org.tukaani:xz:1.8.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:file-management:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-io:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-compat:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.wagon:wagon-provider-api:2.10.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-filtering:3.1.1.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-build-api:0.0.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-io:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-archiver:3.2.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+  </path>
+  
+  <path id="lambdafunction.runtime.module.classpath">
+    <pathelement location="${lambdafunction.testoutput.dir}"/>
+    <pathelement location="${lambdafunction.output.dir}"/>
+    <path refid="library.maven:_junit:junit:4.11.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+    <path refid="library.maven:_com.amazonaws:aws-lambda-java-core:1.2.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.plugins:maven-assembly-plugin:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-plugin-api:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-plexus:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-inject-bean:1.4.2.classpath"/>
+    <path refid="library.maven:_org.sonatype.sisu:sisu-guice:noaop:2.1.7.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-core:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-settings-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-repository-metadata:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model-builder:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-aether-provider:3.0.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-impl:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-spi:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-api:1.7.classpath"/>
+    <path refid="library.maven:_org.sonatype.aether:aether-util:1.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-classworlds:2.2.3.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-component-annotations:1.5.5.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-sec-dispatcher:1.3.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-cipher:1.4.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-artifact:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-model:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-common-artifact-filters:3.0.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-artifact-transfer:0.9.0.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.5.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-interpolation:1.25.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-archiver:4.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.18.classpath"/>
+    <path refid="library.maven:_org.iq80.snappy:snappy:0.4.classpath"/>
+    <path refid="library.maven:_org.tukaani:xz:1.8.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:file-management:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-shared-io:3.0.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-compat:3.0.classpath"/>
+    <path refid="library.maven:_org.apache.maven.wagon:wagon-provider-api:2.10.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+    <path refid="library.maven:_org.apache.maven.shared:maven-filtering:3.1.1.classpath"/>
+    <path refid="library.maven:_org.sonatype.plexus:plexus-build-api:0.0.7.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-io:3.1.1.classpath"/>
+    <path refid="library.maven:_org.apache.maven:maven-archiver:3.2.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.plexus:plexus-utils:3.1.0.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.lambdafunction">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.lambdafunction">
+    <patternset refid="excluded.from.module.lambdafunction"/>
+  </patternset>
+  
+  <path id="lambdafunction.module.sourcepath">
+    <dirset dir="${module.lambdafunction.basedir}">
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="lambdafunction.module.test.sourcepath">
+    <dirset dir="${module.lambdafunction.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.lambdafunction" depends="compile.module.lambdafunction.production,compile.module.lambdafunction.tests" description="Compile module lambdaFunction"/>
+  
+  <target name="compile.module.lambdafunction.production" depends="register.custom.compilers" description="Compile module lambdaFunction; production classes">
+    <mkdir dir="${lambdafunction.output.dir}"/>
+    <javac2 destdir="${lambdafunction.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.lambdafunction}/javac">
+      <compilerarg line="${compiler.args.lambdafunction}"/>
+      <bootclasspath refid="lambdafunction.module.bootclasspath"/>
+      <classpath refid="lambdafunction.module.production.classpath"/>
+      <src refid="lambdafunction.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.lambdafunction"/>
+    </javac2>
+    
+    <copy todir="${lambdafunction.output.dir}">
+      <fileset dir="${module.lambdafunction.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.lambdafunction.tests" depends="register.custom.compilers,compile.module.lambdafunction.production" description="compile module lambdaFunction; test classes" unless="skip.tests">
+    <mkdir dir="${lambdafunction.testoutput.dir}"/>
+    <javac2 destdir="${lambdafunction.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.lambdafunction}/javac">
+      <compilerarg line="${compiler.args.lambdafunction}"/>
+      <bootclasspath refid="lambdafunction.module.bootclasspath"/>
+      <classpath refid="lambdafunction.module.classpath"/>
+      <src refid="lambdafunction.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.lambdafunction"/>
+    </javac2>
+    
+    <copy todir="${lambdafunction.testoutput.dir}">
+      <fileset dir="${module.lambdafunction.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.lambdafunction" description="cleanup module">
+    <delete dir="${lambdafunction.output.dir}"/>
+    <delete dir="${lambdafunction.testoutput.dir}"/>
+  </target>
+</project>

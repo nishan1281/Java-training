@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="toDoList.jnlp">
+    <information>
+        <title>Main</title>
+        <vendor>Unknown</vendor>
+        <description>Main</description>
+        <offline-allowed/>
+    </information>
+    <update check="background"/>
+    <resources>
+        <j2se version="9.0.1+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="animal-sniffer-annotations-1.14.jar" size="3482" download="eager"/>
+        <jar href="checker-compat-qual-2.0.0.jar" size="31547" download="eager"/>
+        <jar href="commons-codec-1.10.jar" size="284184" download="eager"/>
+        <jar href="commons-exec-1.3.jar" size="54423" download="eager"/>
+        <jar href="commons-logging-1.2.jar" size="61829" download="eager"/>
+        <jar href="error_prone_annotations-2.1.3.jar" size="13704" download="eager"/>
+        <jar href="guava-25.0-jre.jar" size="2738171" download="eager"/>
+        <jar href="httpclient-4.5.5.jar" size="766123" download="eager"/>
+        <jar href="httpcore-4.4.9.jar" size="325500" download="eager"/>
+        <jar href="j2objc-annotations-1.1.jar" size="8782" download="eager"/>
+        <jar href="javafx-swt.jar" size="36684" download="eager"/>
+        <jar href="javafx.base.jar" size="744465" download="eager"/>
+        <jar href="javafx.controls.jar" size="2508234" download="eager"/>
+        <jar href="javafx.fxml.jar" size="125617" download="eager"/>
+        <jar href="javafx.graphics.jar" size="4280874" download="eager"/>
+        <jar href="javafx.media.jar" size="263750" download="eager"/>
+        <jar href="javafx.swing.jar" size="87713" download="eager"/>
+        <jar href="javafx.web.jar" size="702070" download="eager"/>
+        <jar href="jsr305-1.3.9.jar" size="33015" download="eager"/>
+        <jar href="okhttp-3.10.0.jar" size="412117" download="eager"/>
+        <jar href="okio-1.14.0.jar" size="85756" download="eager"/>
+        <jar href="okio-1.14.1.jar" size="85773" download="eager"/>
+        <jar href="toDoList.jar" size="23880" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="600" height="400" main-class="com.nishan.Main" name="Main"/>
+</jnlp>
+
